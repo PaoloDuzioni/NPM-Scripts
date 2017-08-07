@@ -1,0 +1,45 @@
+// IMPORTS
+@import 'vars';
+
+
+//GENERAL STYLES
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $main-font;
+  font-size: 16px;
+  text-align: center;
+  background: $back-col;
+}
+
+svg{
+  width: 100px;
+  height: auto;
+  path{
+    fill: rgba(0,0,0,.1);
+  }
+}
+
+h1{
+  font-size: 1.8em;
+  font-weight: 600;
+  color: rgba(0,0,0,.4);
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style: none;
+    margin: 0 0 .7rem;
+    color: rgba(#000, .4);
+  }
+}

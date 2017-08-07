@@ -1,0 +1,27 @@
+{
+  "name": "npm-scripts",
+  "version": "1.0.0",
+  "description": "Learning NPM Scripts as task runners",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass styles -o dist/css --output-style compressed",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "watch:css": "onchange 'styles/*.scss' -- npm run build:css",
+
+    "serve": "browser-sync start --server ./ --port 3000 --files './*.html, dist/css/*.css'",
+    "watch": "parallelshell 'npm run serve' 'npm run watch:css'",
+
+    "postinstall": "npm run watch"
+  },
+  "author": "Paolo Duzioni",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.18.13",
+    "node-sass": "^4.5.3",
+    "onchange": "^3.2.1",
+    "parallelshell": "^3.0.1",
+    "postcss-cli": "^4.1.0"
+  }
+}
