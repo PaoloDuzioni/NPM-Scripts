@@ -1,7 +1,7 @@
 {
   "name": "npm-scripts",
   "version": "1.0.0",
-  "description": "Learning NPM Scripts as task runners",
+  "description": "NPM Scripts as task runners",
   "main": "index.js",
   "scripts": {
     "scss": "node-sass styles -o dist/css --output-style compressed",
