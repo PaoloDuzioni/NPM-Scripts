@@ -9,8 +9,8 @@
     "build:css": "npm run scss && npm run autoprefixer",
     "watch:css": "onchange 'styles/*.scss' -- npm run build:css",
 
-    "serve": "browser-sync start --server ./ --port 3000 --files './*.html, dist/css/*.css'",
-    "watch": "parallelshell 'npm run serve' 'npm run watch:css'",
+    "serve": "browser-sync start --server ./ --port 3000 --files './*.html, dist/css/*.css', js/*.js",
+    "watch": "parallelshell \"npm run serve\" \"npm run watch:css\"",
 
     "postinstall": "npm run watch"
   },
