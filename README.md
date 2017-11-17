@@ -1,5 +1,6 @@
  # NPM Scripts As Task Runner
 
+- Pug Compilation (ex Jade)
 - SCSS Compilation and Minification
 - Post CSS and Autoprefixer
 - BrowserSync

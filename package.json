@@ -1,17 +1,20 @@
 {
   "name": "npm-scripts",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "NPM Scripts as task runners",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass styles -o dist/css --output-style compressed",
-    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
+    "scss": "node-sass './scss' -o './css' --output-style compressed",
+    "autoprefixer": "postcss -u autoprefixer -r './css/main.css'",
     "build:css": "npm run scss && npm run autoprefixer",
-    "watch:css": "onchange 'styles/*.scss' -- npm run build:css",
+    "watch:css": "onchange 'scss/*.scss' -- npm run build:css",
+
+    "pug" : "pug './views' --pretty --out './'",
+    "watch:pug" : "onchange './views/*.pug' -- npm run pug",
 
     "serve": "browser-sync start --server ./ --port 3000 --files './*.html, dist/css/*.css', js/*.js",
-    "watch": "parallelshell \"npm run serve\" \"npm run watch:css\"",
 
+    "watch": "parallelshell \"npm run serve\" \"npm run watch:css\" \"npm run watch:pug\"",
     "postinstall": "npm run watch"
   },
   "author": "Paolo Duzioni",
@@ -22,6 +25,7 @@
     "node-sass": "^4.5.3",
     "onchange": "^3.2.1",
     "parallelshell": "^3.0.1",
-    "postcss-cli": "^4.1.0"
+    "postcss-cli": "^4.1.0",
+    "pug": "^2.0.0-rc.4"
   }
 }
